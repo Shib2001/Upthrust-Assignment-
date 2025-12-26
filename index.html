@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upthrust - D2C Marketing Agency</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- ===== NAVIGATION BAR ===== -->
+        <!-- Fixed navbar with glassmorphism effect on scroll -->
+        <nav class="navbar">
+            <!-- Logo Section (Left) -->
+            <div class="logo">
+                <img src="public/Upthrust.png" alt="Upthrust" class="logo-img">
+                <span class="logo-text">Upthrust</span>
+            </div>
+
+            <!-- Desktop Navigation Menu (Center) -->
+            <!-- Hidden on mobile/tablet (≤992px) - replaced by hamburger menu -->
+            <div class="nav-pill">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#creative">Creative Library</a>
+                <a href="#testimonials">Hear From Them</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+
+            <!-- Hamburger Menu Button (Mobile/Tablet Only) -->
+            <!-- Shows on screens ≤992px, transforms to X when menu opens -->
+            <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- CTA Button (Right) -->
+            <!-- On mobile (≤480px), only shows rocket icon -->
+            <a href="#" class="btn-cta-header">
+                <span>Show Us</span>
+                <span class="cta-icon"><i class="fa-solid fa-rocket"></i></span>
+                <span>How To Scale</span>
+            </a>
+        </nav>
+
+        <!-- ===== MOBILE MENU OVERLAY ===== -->
+        <!-- Slides in from right on mobile/tablet when hamburger is clicked -->
+        <!-- Glassmorphism white overlay with blur effect -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <nav class="mobile-nav">
+                    <a href="#about" class="mobile-nav-item">About</a>
+                    <a href="#services" class="mobile-nav-item">Services</a>
+                    <a href="#work" class="mobile-nav-item">Work</a>
+                    <a href="#creative" class="mobile-nav-item">Creative Library</a>
+                    <a href="#testimonials" class="mobile-nav-item">Hear From Them</a>
+                    <a href="#pricing" class="mobile-nav-item">Pricing</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- ===== HERO CONTENT SECTION ===== -->
+        <div class="hero-container">
+            <!-- ===== LEFT COLUMN - Content ===== -->
+            <div class="hero-content">
+                <!-- Team Avatars - Overlapping circular profile images -->
+                <div class="avatar-group">
+                    <div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt=""></div>
+                    <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""></div>
+                    <div class="avatar"><img src="https://randomuser.me/api/portraits/men/86.jpg" alt=""></div>
+                    <div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt=""></div>
+                    <div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt=""></div>
+                </div>
+
+                <!-- Badge with glassmorphism effect -->
+                <div class="agency-badge">
+                    <span>D2C Marketing Agency</span>
+                </div>
+
+                <!-- Main Heading with italic "Scale" and highlighted revenue -->
+                <h1 class="hero-title">
+                    <span class="italic">Scale</span> Your Store To
+                    <span class="highlight">45 Lakhs+</span> A Month
+                </h1>
+
+                <!-- Hero Description -->
+                <p class="hero-description">
+                    Through scroll-stopping creatives, ruthless conversion optimization<br>
+                    that convert visitor into buyers
+                </p>
+
+                <!-- Main CTA Button with rocket icon -->
+                <a href="#" class="btn-scale">
+                    <div class="btn-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <div class="btn-text">
+                        <span class="btn-main">Scale My Store</span>
+                        <span class="btn-sub">(FRIENDLY TOUR, NOT A SALES PITCH)</span>
+                    </div>
+                </a>
+
+                <!-- ===== TRUSTED BRANDS SECTION ===== -->
+                <div class="trusted-section">
+                    <p class="trusted-label">Trusted By Popular D2C Brands</p>
+
+                    <!-- Brand Logos Row 1 -->
+                    <div class="brand-logos">
+                        <img src="public/Harley davidson.png" alt="Harley Davidson" class="brand-logo-img">
+                        <img src="public/Loreal.png" alt="L'OREAL" class="brand-logo-img">
+                        <img src="public/Spartan.png" alt="Spartan" class="brand-logo-img">
+                        <img src="public/Dell.png" alt="Dell" class="brand-logo-img">
+                        <img src="public/Neon.png" alt="Neon Attack" class="brand-logo-img">
+                    </div>
+
+                    <!-- Brand Logos Row 2 -->
+                    <div class="brand-logos row-2">
+                        <img src="public/Zipnow.png" alt="ZipNow" class="brand-logo-img">
+                        <img src="public/yummie.png" alt="Yummie" class="brand-logo-img">
+                        <img src="public/Shoppitite.png" alt="Shoppitite" class="brand-logo-img">
+                        <img src="public/Three kings.png" alt="Three Kings" class="brand-logo-img">
+                        <img src="public/Mukunda foods.png" alt="Mukunda Foods" class="brand-logo-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== RIGHT COLUMN - Image Grid (4 columns with masonry effect) ===== -->
+            <!-- Absolute positioned, fixed on desktop, relative on mobile -->
+            <div class="image-grid-container">
+                <!-- Column 1 - No offset -->
+                <div class="image-column col-1">
+                    <div class="grid-img"><img src="public/Bill1.jpg" alt="Billboard Design 1"></div>
+                    <div class="grid-img"><img src="public/Bill2.jpg" alt="Billboard Design 2"></div>
+                    <div class="grid-img"><img src="public/Bill3.avif" alt="Billboard Design 3"></div>
+                </div>
+
+                <!-- Column 2 - 55px offset -->
+                <div class="image-column col-2">
+                    <div class="grid-img"><img src="public/Bill4.jpg" alt="Billboard Design 4"></div>
+                    <div class="grid-img"><img src="public/Bill5.jpg" alt="Billboard Design 5"></div>
+                    <div class="grid-img"><img src="public/Bill6.jpg" alt="Billboard Design 6"></div>
+                </div>
+
+                <!-- Column 3 - 28px offset -->
+                <div class="image-column col-3">
+                    <div class="grid-img"><img src="public/Bill7.webp" alt="Billboard Design 7"></div>
+                    <div class="grid-img"><img src="public/Bill8.webp" alt="Billboard Design 8"></div>
+                    <div class="grid-img"><img src="public/Bill9.avif" alt="Billboard Design 9"></div>
+                </div>
+
+                <!-- Column 4 - 80px offset (Hidden on mobile ≤480px) -->
+                <div class="image-column col-4">
+                    <div class="grid-img"><img src="public/Bill10.png" alt="Billboard Design 10"></div>
+                    <div class="grid-img"><img src="public/Bill11.png" alt="Billboard Design 11"></div>
+                    <div class="grid-img"><img src="public/Bill12.png" alt="Billboard Design 12"></div>
+                </div>
+            </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <!-- White background section showcasing 4 key services -->
+    <section class="services-section">
+        <div class="services-container">
+            <!-- Section Header with title and subtitle -->
+            <div class="services-header">
+                <span class="services-caption">OUR SERVICES</span>
+                <h2 class="services-title">
+                    A Simple, Effective And Functional<br>
+                    Way To <span class="italic">Scale Your Store</span>
+                </h2>
+                <p class="services-subtitle">Everything You Need to Acquire, Convert, and Retain Customers Profitably
+                </p>
+            </div>
+
+            <!-- ROAS Decorator - Handwritten style badge (Hidden on mobile ≤992px) -->
+            <div class="roas-decorator">
+                <span class="roas-text">Here's how your<br><span class="roas-badge">ROAS</span> doubles up!!</span>
+                <svg class="roas-arrow" width="68" height="55" viewBox="0 0 68 55" fill="none">
+                    <path d="M2 2C20 25 45 45 66 53" stroke="#FF3B00" stroke-width="3" stroke-linecap="round" />
+                    <path d="M56 48L66 53L60 43" stroke="#FF3B00" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <!-- Services List - 4 expand/collapse cards -->
+            <div class="services-list">
+                <!-- Service Card 1: Tech & Development -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Tech & Development</h3>
+                        <p class="service-description">
+                            Meta Ads • Google Ads • Multi-Channel Attribution<br>
+                            Avg 3.8x ROAS | Scale to $500K+/Month | Lower CAC 30-50%
+                        </p>
+                    </div>
+                    <!-- Expand/Collapse Button -->
+                    <button class="service-toggle">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 2: Creative Production -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Creative Production</h3>
+                        <p class="service-description">
+                            UGC Video • Static Design • Performance Editing • Rapid Testing<br>
+                            20-30 Fresh Ads Monthly | Winners in 3-5 Days | Beat Ad Fatigue
+                        </p>
+                    </div>
+                    <button class="service-toggle">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 3: Website Design -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Website Design</h3>
+                        <p class="service-description">
+                            Shopify Stores • CRO & Landing Pages • A/B Testing • Mobile-First<br>
+                            10-15% Revenue Lifts | Sub-2 Second Speed | Conversion-Focused
+                        </p>
+                    </div>
+                    <button class="service-toggle">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 4: Marketplace Management -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Marketplace Management</h3>
+                        <p class="service-description">
+                            Amazon PPC • Flipkart Ads • Multi-Platform • SEO & Optimization<br>
+                            Lower ACoS 40%+ | Dominate Rankings | Profitable Multi-Channel
+                        </p>
+                    </div>
+                    <button class="service-toggle">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        /* ===== NAVBAR SCROLL EFFECT ===== */
+        // Adds glassmorphism effect to navbar when user scrolls down
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            // Apply 'scrolled' class after scrolling 50px
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        /* ===== MOBILE MENU TOGGLE ===== */
+        // Get DOM elements
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const body = document.body;
+
+        // Toggle mobile menu - Opens/closes when hamburger button is clicked
+        // Hamburger icon transforms to X when menu is open
+        hamburgerBtn.addEventListener('click', function () {
+            const isOpen = mobileMenu.classList.contains('active');
+
+            if (isOpen) {
+                // Close menu: Remove active classes and restore body scroll
+                mobileMenu.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+                body.style.overflow = '';
+            } else {
+                // Open menu: Add active classes and prevent body scroll
+                mobileMenu.classList.add('active');
+                hamburgerBtn.classList.add('active');
+                body.style.overflow = 'hidden';
+            }
+        });
+    </script>
+</body>
+
+</html>
