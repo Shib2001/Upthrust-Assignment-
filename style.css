@@ -52,13 +52,16 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding: 12px 70px;
-  position: fixed; /* Changed from relative to fixed */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Increased z-index to stay on top */
+  z-index: 1000;
   transition: background-color 0.3s ease, padding 0.3s ease;
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 /* Scrolled state - white blur glassmorphism effect */
@@ -88,10 +91,10 @@ ul {
   border: 1px solid #000000;
 }
 
-/* Change CTA button styling when scrolled */
+/* Change CTA button styling when scrolled - keep orange border */
 .navbar.scrolled .btn-cta-header {
   background: #000000;
-  border: 1px solid #000000;
+  border: 2px solid #ff3b00;
 }
 
 .logo {
@@ -103,13 +106,13 @@ ul {
 .logo-img {
   height: 24px;
   width: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
 }
 
 .logo-text {
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-white);
+  color: #000000;
   letter-spacing: -0.02em;
 }
 
@@ -118,12 +121,8 @@ ul {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #000000;
+  border: 1px solid #000000;
   border-radius: 50px;
   padding: 8px 12px;
 }
@@ -134,11 +133,14 @@ ul {
   font-weight: 500;
   padding: 6px 12px;
   border-radius: 30px;
+  background: #333333;
+  border: 1px solid #444444;
   transition: all 0.3s ease;
 }
 
 .nav-pill a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #ff3b00;
+  border-color: #ff3b00;
 }
 
 /* Header CTA Button */
@@ -152,7 +154,7 @@ ul {
       rgba(0, 0, 0, 0.1) 100%
     ),
     #000;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #ff3b00;
   border-radius: 50px;
   padding: 12px 20px;
   font-size: 14px;
@@ -162,18 +164,38 @@ ul {
 
 .btn-cta-header .cta-icon {
   background: var(--accent-orange);
-  color: white;
   width: 28px;
   height: 28px;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-cta-header .cta-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
 }
 
 .btn-cta-header:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #ff3b00;
+  border-color: #ffffff;
+  outline: 4px solid #ff3b00;
+  outline-offset: 0px;
+  transform: scale(1.02);
+}
+
+.btn-cta-header:hover .cta-icon {
+  background: #ffffff;
+}
+
+.btn-cta-header:hover .cta-icon-img {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(100%) saturate(1500%)
+    hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
 /* ========================================
@@ -326,8 +348,7 @@ ul {
    Left Column - Hero Content
 ======================================== */
 .hero-content {
-  flex: 0 0 40%;
-  max-width: 450px;
+  flex: 0 0 52%;
   padding-top: 30px;
 }
 
@@ -425,34 +446,58 @@ ul {
 .btn-scale {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.12) 0%,
       rgba(255, 255, 255, 0) 100%
     ),
     #000;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  padding: 16px 20px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 20px 28px;
   margin-bottom: 50px;
   transition: all 0.3s ease;
 }
 
 .btn-scale:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #ff3b00;
+  border-color: #ffffff;
+  transform: scale(1.02);
+  outline: 6px solid #ff3b00;
+  outline-offset: 0px;
 }
 
+/* Icon wrapper - handles background */
 .btn-scale .btn-icon {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   background: var(--accent-orange);
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  color: white;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* Icon image inside wrapper */
+.btn-scale .btn-icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* HOVER: wrapper goes white */
+.btn-scale:hover .btn-icon {
+  background: #ffffff;
+}
+
+/* HOVER: logo turns orange */
+.btn-scale:hover .btn-icon-img {
+  filter: invert(38%) sepia(93%) saturate(5000%) hue-rotate(9deg)
+    brightness(102%) contrast(105%);
 }
 
 .btn-scale .btn-text {
@@ -462,14 +507,14 @@ ul {
 }
 
 .btn-scale .btn-main {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   color: var(--text-white);
   letter-spacing: -0.02em;
 }
 
 .btn-scale .btn-sub {
-  font-size: 9px;
+  font-size: 10px;
   color: var(--text-white);
   text-transform: uppercase;
 }
@@ -484,7 +529,7 @@ ul {
 .trusted-label {
   font-size: 17px;
   color: var(--text-white);
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   letter-spacing: -0.02em;
 }
 
@@ -510,47 +555,74 @@ ul {
 }
 
 /* ========================================
-   Right Column - Image Grid (4 columns)
+   Right Column - Image Grid (3 columns with infinite scroll)
 ======================================== */
 .image-grid-container {
   flex: 1;
   display: flex;
   gap: 14px;
-  min-height: calc(100vh - 80px);
   position: absolute;
   right: 20px;
-  top: 100px;
-  width: 52%;
-  overflow: visible;
+  top: 0;
+  bottom: 0;
+  width: 45%;
+  overflow: hidden;
 }
 
 .image-column {
   display: flex;
   flex-direction: column;
-  gap: 14px;
   flex: 1;
+  overflow: hidden;
 }
 
-/* Offset columns for masonry effect - scaled down */
-.col-1 {
-  margin-top: 0px;
-}
-
-.col-2 {
-  margin-top: 55px;
-}
-
+/* All columns start from top */
+.col-1,
+.col-2,
 .col-3 {
-  margin-top: 28px;
+  margin-top: 0;
 }
 
-.col-4 {
-  margin-top: 80px;
+/* Scroll content wrapper for animation */
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: scrollUp 12s linear infinite;
+}
+
+/* Scroll down animation for column 2 */
+.scroll-content.scroll-down {
+  animation: scrollDown 15s linear infinite;
+}
+
+/* Same speed animation for column 3 */
+.scroll-content.scroll-slow {
+  animation: scrollUp 12s linear infinite;
+}
+
+/* Keyframe animations */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .grid-img {
   width: 100%;
-  height: 270px;
+  height: 320px;
   border-radius: 8px;
   background-size: cover;
   background-position: center;
@@ -604,17 +676,8 @@ ul {
   background: linear-gradient(180deg, #6b5b95 0%, #4a3d6a 100%);
   height: 270px;
 }
-
-.col-4 .grid-img:nth-child(1) {
+.col-3 .grid-img:nth-child(4) {
   background: linear-gradient(180deg, #1abc9c 0%, #16a085 100%);
-  height: 270px;
-}
-.col-4 .grid-img:nth-child(2) {
-  background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
-  height: 270px;
-}
-.col-4 .grid-img:nth-child(3) {
-  background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
   height: 270px;
 }
 
@@ -627,6 +690,9 @@ ul {
   /* Navbar adjustments */
   .navbar {
     padding: 12px 40px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
   .nav-pill {
@@ -644,6 +710,11 @@ ul {
     padding: 10px 16px;
     gap: 6px;
     order: 2; /* CTA button in the middle */
+    border-width: 1px;
+  }
+
+  .btn-cta-header:hover {
+    outline-width: 3px;
   }
 
   .btn-cta-header .cta-icon {
@@ -654,13 +725,13 @@ ul {
 
   /* Hero section */
   .hero {
-    padding: 90px 40px 20px 40px;
+    padding: 90px 40px 0 40px;
   }
 
   .hero-container {
     flex-direction: column;
     gap: 30px;
-    padding: 40px 0 20px 0;
+    padding: 40px 0 0 0;
   }
 
   .hero-content {
@@ -677,9 +748,10 @@ ul {
   .image-grid-container {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 450px;
     right: 0;
     top: 0;
+    overflow: hidden;
   }
 
   .image-column {
@@ -729,11 +801,11 @@ ul {
 
   /* Hero section */
   .hero {
-    padding: 85px 20px 20px 20px;
+    padding: 85px 20px 0 20px;
   }
 
   .hero-container {
-    padding: 30px 0 20px 0;
+    padding: 30px 0 0 0;
   }
 
   .hero-title {
@@ -765,12 +837,18 @@ ul {
     padding: 14px 18px;
     gap: 10px;
     margin-bottom: 35px;
+    border-radius: 10px;
+  }
+
+  .btn-scale:hover {
+    outline-width: 4px;
   }
 
   .btn-scale .btn-icon {
     width: 32px;
     height: 32px;
     font-size: 14px;
+    border-radius: 6px;
   }
 
   .btn-scale .btn-main {
@@ -798,8 +876,9 @@ ul {
 
   /* Image grid */
   .image-grid-container {
-    height: 300px;
+    height: 400px;
     gap: 10px;
+    overflow: hidden;
   }
 
   .image-column {
@@ -837,11 +916,11 @@ ul {
 
   /* Hero section */
   .hero {
-    padding: 75px 15px 15px 15px;
+    padding: 75px 15px 0 15px;
   }
 
   .hero-container {
-    padding: 20px 0 15px 0;
+    padding: 20px 0 0 0;
   }
 
   .hero-title {
@@ -879,12 +958,19 @@ ul {
     padding: 12px 16px;
     gap: 8px;
     margin-bottom: 28px;
+    border-radius: 8px;
+  }
+
+  .btn-scale:hover {
+    outline-width: 3px;
+    transform: scale(1.01);
   }
 
   .btn-scale .btn-icon {
     width: 28px;
     height: 28px;
     font-size: 12px;
+    border-radius: 5px;
   }
 
   .btn-scale .btn-main {
@@ -917,8 +1003,9 @@ ul {
 
   /* Image grid */
   .image-grid-container {
-    height: 250px;
+    height: 350px;
     gap: 8px;
+    overflow: hidden;
   }
 
   .image-column {
@@ -1039,8 +1126,7 @@ ul {
 /* Service Card */
 .service-card {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   background: #f9f9f9;
   border-radius: 8px;
   padding: 30px;
@@ -1050,6 +1136,19 @@ ul {
 
 .service-card:hover {
   background: #f0f0f0;
+}
+
+/* Service Card expanded state */
+.service-card.expanded {
+  background: #f0f0f0;
+}
+
+/* Service Main - Header Row */
+.service-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .service-content {
@@ -1096,6 +1195,145 @@ ul {
   color: white;
 }
 
+/* Rotate icon when expanded */
+.service-card.expanded .service-toggle {
+  background: black;
+  color: white;
+}
+
+.service-card.expanded .service-toggle i {
+  transform: rotate(45deg);
+}
+
+.service-toggle i {
+  transition: transform 0.3s ease;
+}
+
+/* Expandable Content Panel */
+.service-expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  width: 100%;
+}
+
+.service-card.expanded .service-expand {
+  max-height: 300px;
+  padding-top: 25px;
+}
+
+.expand-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 25px;
+}
+
+/* CTA Button in expanded panel */
+.btn-cta-service {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: 2px solid #000000;
+}
+
+.btn-cta-service:hover {
+  background: #ff3b00;
+  border-color: #ffffff;
+  outline: 4px solid #ff3b00;
+  outline-offset: 0px;
+  transform: scale(1.02);
+}
+
+.btn-cta-service:hover .cta-icon {
+  background: #ffffff;
+}
+
+.btn-cta-service:hover .cta-icon-img {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(100%) saturate(1500%)
+    hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.btn-cta-service .cta-icon {
+  background: var(--accent-orange);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-cta-service .cta-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+/* Feature items */
+.expand-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.feature-item {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.feature-item strong {
+  font-weight: 600;
+}
+
+/* Perfect for decorator */
+.expand-decorator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  min-width: 180px;
+  transform: rotate(3deg);
+}
+
+.perfect-badge {
+  display: inline-block;
+  background: var(--accent-orange);
+  color: #ffffff;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-family: "HanziPen TC", cursive, sans-serif;
+}
+
+.decorator-arrow {
+  margin-right: 30px;
+}
+
+.perfect-text {
+  font-family: "HanziPen TC", cursive, sans-serif;
+  font-size: 16px;
+  color: #000000;
+  text-align: right;
+  line-height: 1.4;
+}
+
 /* Services Responsive */
 @media (max-width: 992px) {
   .services-section {
@@ -1124,9 +1362,31 @@ ul {
     gap: 15px;
   }
 
+  .service-main {
+    gap: 15px;
+  }
+
   .service-content {
     flex: 1;
     max-width: calc(100% - 45px);
+  }
+
+  /* Expandable panel responsive */
+  .expand-inner {
+    gap: 25px;
+  }
+
+  .expand-decorator {
+    display: none;
+  }
+
+  .btn-cta-service {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .feature-item {
+    font-size: 13px;
   }
 
   .service-title {
@@ -1180,9 +1440,37 @@ ul {
     gap: 12px;
   }
 
+  .service-main {
+    gap: 12px;
+  }
+
   .service-content {
     gap: 6px;
     max-width: calc(100% - 40px);
+  }
+
+  /* Expandable panel responsive */
+  .expand-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .expand-left {
+    width: 100%;
+  }
+
+  .btn-cta-service {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  .btn-cta-service:hover {
+    outline-width: 3px;
+  }
+
+  .feature-item {
+    font-size: 12px;
   }
 
   .service-title {
@@ -1229,15 +1517,52 @@ ul {
 
   .service-card {
     padding: 15px;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 10px;
+  }
+
+  .service-main {
+    gap: 10px;
+    align-items: flex-start;
   }
 
   .service-content {
     gap: 5px;
     flex: 1;
     max-width: calc(100% - 36px);
+  }
+
+  /* Expandable panel responsive */
+  .service-card.expanded .service-expand {
+    max-height: 400px;
+  }
+
+  .expand-inner {
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+  }
+
+  .btn-cta-service {
+    padding: 10px 16px;
+    font-size: 11px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-cta-service:hover {
+    outline-width: 2px;
+    transform: scale(1.01);
+  }
+
+  .btn-cta-service .cta-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .feature-item {
+    font-size: 11px;
   }
 
   .service-title {

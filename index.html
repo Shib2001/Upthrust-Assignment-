@@ -58,7 +58,7 @@
             <!-- On mobile (≤480px), only shows rocket icon -->
             <a href="#" class="btn-cta-header">
                 <span>Show Us</span>
-                <span class="cta-icon"><i class="fa-solid fa-rocket"></i></span>
+                <span class="cta-icon"><img src="public/Upthrust.png" alt="Upthrust" class="cta-icon-img"></span>
                 <span>How To Scale</span>
             </a>
         </nav>
@@ -112,7 +112,7 @@
                 <!-- Main CTA Button with rocket icon -->
                 <a href="#" class="btn-scale">
                     <div class="btn-icon">
-                        <i class="fa-solid fa-rocket"></i>
+                        <img src="public/Upthrust.png" alt="Upthrust" class="btn-icon-img">
                     </div>
                     <div class="btn-text">
                         <span class="btn-main">Scale My Store</span>
@@ -144,35 +144,52 @@
                 </div>
             </div>
 
-            <!-- ===== RIGHT COLUMN - Image Grid (4 columns with masonry effect) ===== -->
+            <!-- ===== RIGHT COLUMN - Image Grid (3 columns with infinite scroll) ===== -->
             <!-- Absolute positioned, fixed on desktop, relative on mobile -->
             <div class="image-grid-container">
-                <!-- Column 1 - No offset -->
+                <!-- Column 1 - Scroll Up -->
                 <div class="image-column col-1">
-                    <div class="grid-img"><img src="public/Bill1.jpg" alt="Billboard Design 1"></div>
-                    <div class="grid-img"><img src="public/Bill2.jpg" alt="Billboard Design 2"></div>
-                    <div class="grid-img"><img src="public/Bill3.avif" alt="Billboard Design 3"></div>
+                    <div class="scroll-content">
+                        <div class="grid-img"><img src="public/Bill1.jpg" alt="Billboard Design 1"></div>
+                        <div class="grid-img"><img src="public/Bill2.jpg" alt="Billboard Design 2"></div>
+                        <div class="grid-img"><img src="public/Bill3.avif" alt="Billboard Design 3"></div>
+                        <div class="grid-img"><img src="public/Bill4.jpg" alt="Billboard Design 4"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="grid-img"><img src="public/Bill1.jpg" alt="Billboard Design 1"></div>
+                        <div class="grid-img"><img src="public/Bill2.jpg" alt="Billboard Design 2"></div>
+                        <div class="grid-img"><img src="public/Bill3.avif" alt="Billboard Design 3"></div>
+                        <div class="grid-img"><img src="public/Bill4.jpg" alt="Billboard Design 4"></div>
+                    </div>
                 </div>
 
-                <!-- Column 2 - 55px offset -->
+                <!-- Column 2 - Scroll Down -->
                 <div class="image-column col-2">
-                    <div class="grid-img"><img src="public/Bill4.jpg" alt="Billboard Design 4"></div>
-                    <div class="grid-img"><img src="public/Bill5.jpg" alt="Billboard Design 5"></div>
-                    <div class="grid-img"><img src="public/Bill6.jpg" alt="Billboard Design 6"></div>
+                    <div class="scroll-content scroll-down">
+                        <div class="grid-img"><img src="public/Bill5.jpg" alt="Billboard Design 5"></div>
+                        <div class="grid-img"><img src="public/Bill6.jpg" alt="Billboard Design 6"></div>
+                        <div class="grid-img"><img src="public/Bill7.webp" alt="Billboard Design 7"></div>
+                        <div class="grid-img"><img src="public/Bill8.webp" alt="Billboard Design 8"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="grid-img"><img src="public/Bill5.jpg" alt="Billboard Design 5"></div>
+                        <div class="grid-img"><img src="public/Bill6.jpg" alt="Billboard Design 6"></div>
+                        <div class="grid-img"><img src="public/Bill7.webp" alt="Billboard Design 7"></div>
+                        <div class="grid-img"><img src="public/Bill8.webp" alt="Billboard Design 8"></div>
+                    </div>
                 </div>
 
-                <!-- Column 3 - 28px offset -->
+                <!-- Column 3 - Scroll Up (slower) -->
                 <div class="image-column col-3">
-                    <div class="grid-img"><img src="public/Bill7.webp" alt="Billboard Design 7"></div>
-                    <div class="grid-img"><img src="public/Bill8.webp" alt="Billboard Design 8"></div>
-                    <div class="grid-img"><img src="public/Bill9.avif" alt="Billboard Design 9"></div>
-                </div>
-
-                <!-- Column 4 - 80px offset (Hidden on mobile ≤480px) -->
-                <div class="image-column col-4">
-                    <div class="grid-img"><img src="public/Bill10.png" alt="Billboard Design 10"></div>
-                    <div class="grid-img"><img src="public/Bill11.png" alt="Billboard Design 11"></div>
-                    <div class="grid-img"><img src="public/Bill12.png" alt="Billboard Design 12"></div>
+                    <div class="scroll-content scroll-slow">
+                        <div class="grid-img"><img src="public/Bill9.avif" alt="Billboard Design 9"></div>
+                        <div class="grid-img"><img src="public/Bill10.png" alt="Billboard Design 10"></div>
+                        <div class="grid-img"><img src="public/Bill11.png" alt="Billboard Design 11"></div>
+                        <div class="grid-img"><img src="public/Bill12.png" alt="Billboard Design 12"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="grid-img"><img src="public/Bill9.avif" alt="Billboard Design 9"></div>
+                        <div class="grid-img"><img src="public/Bill10.png" alt="Billboard Design 10"></div>
+                        <div class="grid-img"><img src="public/Bill11.png" alt="Billboard Design 11"></div>
+                        <div class="grid-img"><img src="public/Bill12.png" alt="Billboard Design 12"></div>
+                    </div>
                 </div>
             </div>
     </section>
@@ -205,60 +222,184 @@
             <!-- Services List - 4 expand/collapse cards -->
             <div class="services-list">
                 <!-- Service Card 1: Tech & Development -->
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3 class="service-title">Tech & Development</h3>
-                        <p class="service-description">
-                            Meta Ads • Google Ads • Multi-Channel Attribution<br>
-                            Avg 3.8x ROAS | Scale to $500K+/Month | Lower CAC 30-50%
-                        </p>
+                <div class="service-card" id="service-tech">
+                    <div class="service-main">
+                        <div class="service-content">
+                            <h3 class="service-title">Tech & Development</h3>
+                            <p class="service-description">
+                                Meta Ads • Google Ads • Multi-Channel Attribution<br>
+                                Avg 3.8x ROAS | Scale to $500K+/Month | Lower CAC 30-50%
+                            </p>
+                        </div>
+                        <!-- Expand/Collapse Button -->
+                        <button class="service-toggle" aria-expanded="false" aria-controls="expand-tech">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
                     </div>
-                    <!-- Expand/Collapse Button -->
-                    <button class="service-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
+                    <!-- Expandable Content Panel -->
+                    <div class="service-expand" id="expand-tech">
+                        <div class="expand-inner">
+                            <div class="expand-left">
+                                <a href="#" class="btn-cta-service">
+                                    <span>Show Us</span>
+                                    <span class="cta-icon"><img src="public/Upthrust.png" alt="Upthrust"
+                                            class="cta-icon-img"></span>
+                                    <span>How To Scale</span>
+                                </a>
+                            </div>
+                            <div class="expand-features">
+                                <div class="feature-item">→ Ecommerce ad campaigns averaging <strong>3.8x ROAS</strong>
+                                </div>
+                                <div class="feature-item">→ Daily optimization by ecommerce specialists</div>
+                                <div class="feature-item">→ Performance creative testing <strong>(20-30 new
+                                        ads/month)</strong></div>
+                            </div>
+                            <div class="expand-decorator">
+                                <span class="perfect-badge">Perfect for</span>
+                                <svg class="decorator-arrow" width="40" height="35" viewBox="0 0 40 35" fill="none">
+                                    <path d="M2 2C12 15 25 28 38 33" stroke="#000" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M30 28L38 33L32 23" stroke="#000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span class="perfect-text">Ecommerce brands spending<br>$30K+/month</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Service Card 2: Creative Production -->
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3 class="service-title">Creative Production</h3>
-                        <p class="service-description">
-                            UGC Video • Static Design • Performance Editing • Rapid Testing<br>
-                            20-30 Fresh Ads Monthly | Winners in 3-5 Days | Beat Ad Fatigue
-                        </p>
+                <div class="service-card" id="service-creative">
+                    <div class="service-main">
+                        <div class="service-content">
+                            <h3 class="service-title">Creative Production</h3>
+                            <p class="service-description">
+                                UGC Video • Static Design • Performance Editing • Rapid Testing<br>
+                                20-30 Fresh Ads Monthly | Winners in 3-5 Days | Beat Ad Fatigue
+                            </p>
+                        </div>
+                        <button class="service-toggle" aria-expanded="false" aria-controls="expand-creative">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
                     </div>
-                    <button class="service-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
+                    <!-- Expandable Content Panel -->
+                    <div class="service-expand" id="expand-creative">
+                        <div class="expand-inner">
+                            <div class="expand-left">
+                                <a href="#" class="btn-cta-service">
+                                    <span>Show Us</span>
+                                    <span class="cta-icon"><img src="public/Upthrust.png" alt="Upthrust"
+                                            class="cta-icon-img"></span>
+                                    <span>How To Scale</span>
+                                </a>
+                            </div>
+                            <div class="expand-features">
+                                <div class="feature-item">→ <strong>20-30</strong> ecommerce-focused creatives monthly
+                                </div>
+                                <div class="feature-item">→ Tested on <strong>$50M+</strong> in ecommerce ad spend</div>
+                                <div class="feature-item">→ Fast iteration for ecommerce brands</div>
+                            </div>
+                            <div class="expand-decorator">
+                                <span class="perfect-badge">Perfect for</span>
+                                <svg class="decorator-arrow" width="40" height="35" viewBox="0 0 40 35" fill="none">
+                                    <path d="M2 2C12 15 25 28 38 33" stroke="#000" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M30 28L38 33L32 23" stroke="#000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span class="perfect-text">Ecommerce brands tired of<br>creative fatigue</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Service Card 3: Website Design -->
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3 class="service-title">Website Design</h3>
-                        <p class="service-description">
-                            Shopify Stores • CRO & Landing Pages • A/B Testing • Mobile-First<br>
-                            10-15% Revenue Lifts | Sub-2 Second Speed | Conversion-Focused
-                        </p>
+                <div class="service-card" id="service-website">
+                    <div class="service-main">
+                        <div class="service-content">
+                            <h3 class="service-title">Website Design</h3>
+                            <p class="service-description">
+                                Shopify Stores • CRO & Landing Pages • A/B Testing • Mobile-First<br>
+                                10-15% Revenue Lifts | Sub-2 Second Speed | Conversion-Focused
+                            </p>
+                        </div>
+                        <button class="service-toggle" aria-expanded="false" aria-controls="expand-website">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
                     </div>
-                    <button class="service-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
+                    <!-- Expandable Content Panel -->
+                    <div class="service-expand" id="expand-website">
+                        <div class="expand-inner">
+                            <div class="expand-left">
+                                <a href="#" class="btn-cta-service">
+                                    <span>Show Us</span>
+                                    <span class="cta-icon"><img src="public/Upthrust.png" alt="Upthrust"
+                                            class="cta-icon-img"></span>
+                                    <span>How To Scale</span>
+                                </a>
+                            </div>
+                            <div class="expand-features">
+                                <div class="feature-item">→ High-converting ecommerce <strong>websites</strong></div>
+                                <div class="feature-item">→ Ecommerce <strong>brand identity</strong> development</div>
+                                <div class="feature-item">→ <strong>Shopify</strong> design for online stores</div>
+                            </div>
+                            <div class="expand-decorator">
+                                <span class="perfect-badge">Perfect for</span>
+                                <svg class="decorator-arrow" width="40" height="35" viewBox="0 0 40 35" fill="none">
+                                    <path d="M2 2C12 15 25 28 38 33" stroke="#000" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M30 28L38 33L32 23" stroke="#000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span class="perfect-text">New ecommerce brands<br>or rebranding</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Service Card 4: Marketplace Management -->
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3 class="service-title">Marketplace Management</h3>
-                        <p class="service-description">
-                            Amazon PPC • Flipkart Ads • Multi-Platform • SEO & Optimization<br>
-                            Lower ACoS 40%+ | Dominate Rankings | Profitable Multi-Channel
-                        </p>
+                <div class="service-card" id="service-marketplace">
+                    <div class="service-main">
+                        <div class="service-content">
+                            <h3 class="service-title">Marketplace Management</h3>
+                            <p class="service-description">
+                                Shopify Stores • CRO & Landing Pages • A/B Testing • Mobile-First<br>
+                                10-15% Revenue Lifts | Sub-2 Second Speed | Conversion-Focused
+                            </p>
+                        </div>
+                        <button class="service-toggle" aria-expanded="false" aria-controls="expand-marketplace">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
                     </div>
-                    <button class="service-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
+                    <!-- Expandable Content Panel -->
+                    <div class="service-expand" id="expand-marketplace">
+                        <div class="expand-inner">
+                            <div class="expand-left">
+                                <a href="#" class="btn-cta-service">
+                                    <span>Show Us</span>
+                                    <span class="cta-icon"><img src="public/Upthrust.png" alt="Upthrust"
+                                            class="cta-icon-img"></span>
+                                    <span>How To Scale</span>
+                                </a>
+                            </div>
+                            <div class="expand-features">
+                                <div class="feature-item">→ Ecommerce <strong>PPC management</strong> for marketplaces
+                                </div>
+                                <div class="feature-item">→ Listing optimization for <strong>online sales</strong></div>
+                                <div class="feature-item">→ <strong>Full ecommerce</strong> account management</div>
+                            </div>
+                            <div class="expand-decorator">
+                                <span class="perfect-badge">Perfect for</span>
+                                <svg class="decorator-arrow" width="40" height="35" viewBox="0 0 40 35" fill="none">
+                                    <path d="M2 2C12 15 25 28 38 33" stroke="#000" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M30 28L38 33L32 23" stroke="#000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span class="perfect-text">Ecommerce brands expanding<br>to marketplace</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -300,6 +441,34 @@
                 hamburgerBtn.classList.add('active');
                 body.style.overflow = 'hidden';
             }
+        });
+
+        /* ===== SERVICE CARD ACCORDION TOGGLE ===== */
+        // Get all service toggle buttons
+        const serviceToggles = document.querySelectorAll('.service-toggle');
+
+        serviceToggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                const serviceCard = this.closest('.service-card');
+                const isExpanded = serviceCard.classList.contains('expanded');
+
+                // Close all other expanded cards (accordion behavior)
+                document.querySelectorAll('.service-card.expanded').forEach(card => {
+                    if (card !== serviceCard) {
+                        card.classList.remove('expanded');
+                        card.querySelector('.service-toggle').setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Toggle current card
+                if (isExpanded) {
+                    serviceCard.classList.remove('expanded');
+                    this.setAttribute('aria-expanded', 'false');
+                } else {
+                    serviceCard.classList.add('expanded');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
         });
     </script>
 </body>
